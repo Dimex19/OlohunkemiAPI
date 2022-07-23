@@ -9,12 +9,10 @@ import re
 def clean_title(title):
     return re.sub("[^A-Za-z0-9 ]", "", title)
 
-#loading the data
-def get_data():
-    movies = pd.read_csv('dataset/movies_data/movies.zip')
-    ratings =  pd.read_csv('dataset/movie_data/ratings.zip')
-    movies['clean_title'] = movies['title'].apply(clean_title)
-    return movies, ratings
+movies = pd.read_csv('dataset/movies_data/movies.zip')
+ratings =  pd.read_csv('dataset/movie_data/ratings.zip')
+movies['clean_title'] = movies['title'].apply(clean_title)
+    
 
 
 #movies['clean_title'] = movies['title'].apply(clean_title)
@@ -97,17 +95,4 @@ def find_similar_movies(movie_id):
 #display(movie_name_input, recommendation_list)``
 
 
-def results(movie_name):
-        movie_name = movie_name.lower()
-        movie_name = movie_name.apply(clean_title)
 
-        find_movie = get_data()
-        search_result = search(find_movie)
-        similar_result = find_similar_movies(search_result,find_movie)
-
-        if movie_name not in find_movie['original_title'].unique():
-                return 'Movie not in Database'
-
-        else:
-                recommendations = recommend_movies(movie_name, find_movie, search_result, similar_result)
-                return recommendations
