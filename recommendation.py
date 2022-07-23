@@ -4,7 +4,8 @@ import re
 import pandas as pd
 import numpy as np
 import re
-app = app.server
+from app import app
+#app = app.server
 
 #creating a function that cleans the title
 def clean_title(title):
