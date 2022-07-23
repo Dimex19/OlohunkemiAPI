@@ -1,1 +1,1 @@
-web: gunicorn recommendation:server --max-requests 2
+web: gunicorn recommendation:app --max-requests 2
