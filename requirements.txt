@@ -5,12 +5,12 @@ gunicorn==20.0.4
 joblib==0.13.2 
 jsonschema==2.6.0 
 cython==0.29.28
-pandas==0.25.1 
+pandas==1.4.3 
 pickleshare==0.7.5
 requests==2.23.0 
 requests-file==1.4.3 
 scikit-learn==1.0.2 
-numpy==1.21.1 
+numpy==1.23.0
 wcwidth==0.1.7 
 webencodings==0.5.1
 Werkzeug==1.0.1
