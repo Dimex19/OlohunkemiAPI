@@ -4,20 +4,17 @@ import re
 import pandas as pd
 import numpy as np
 import re
-#loading the data
-def get_data():
-    movies = pd.read_csv('movie_data/movies.csv.zip')
-    ratings =  pd.read_csv('movie_data/ratings.csv.zip')
-    return movies, ratings
 
 #creating a function that cleans the title
 def clean_title(title):
     return re.sub("[^A-Za-z0-9 ]", "", title)
 
-def new_data(data):
+#loading the data
+def get_data():
+    movies = pd.read_csv('dataset/movies_data/movies.zip')
+    ratings =  pd.read_csv('dataset/movie_data/ratings.zip')
     movies['clean_title'] = movies['title'].apply(clean_title)
-    return movies
-
+    return movies, ratings
 
 
 #movies['clean_title'] = movies['title'].apply(clean_title)
